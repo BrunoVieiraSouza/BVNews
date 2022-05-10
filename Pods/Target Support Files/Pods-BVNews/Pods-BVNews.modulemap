@@ -1,0 +1,6 @@
+framework module Pods_BVNews {
+  umbrella header "Pods-BVNews-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,17 @@
+//
+//  CreateCountViewController.swift
+//  BVNews
+//
+//  Created by Bruno Vieira Souza on 05/05/22.
+//
+
+import UIKit
+
+class CreateCountViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("veio")
+        // Do any additional setup after loading the view.
+    }
+}
