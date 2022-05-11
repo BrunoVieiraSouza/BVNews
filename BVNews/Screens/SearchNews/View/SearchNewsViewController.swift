@@ -9,6 +9,8 @@ import UIKit
 
 class SearchNewsViewController: UIViewController {
 
+    var viewModel: SearchNewsViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

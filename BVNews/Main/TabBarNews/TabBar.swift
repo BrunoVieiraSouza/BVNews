@@ -9,9 +9,8 @@
 import UIKit
 
 class TabBarControllerNews: UITabBarController {
-
+    
     override func viewWillAppear(_ animated: Bool) {
-        
         guard let homeVC = UIStoryboard.homeNews.instantiateViewController(withIdentifier: "HomeNewsViewController") as? HomeNewsViewController else {return}
         let HomeNewsViewController = homeVC
         let homeNewsNavigationController = UINavigationController(rootViewController: HomeNewsViewController)
@@ -26,5 +25,9 @@ class TabBarControllerNews: UITabBarController {
         searchNewsNavigationController.tabBarItem = searchsTabBar
 
         self.viewControllers = [homeNewsNavigationController, searchNewsNavigationController]
+    }
+    
+    static func setUpTabbar() {
+        
     }
 }

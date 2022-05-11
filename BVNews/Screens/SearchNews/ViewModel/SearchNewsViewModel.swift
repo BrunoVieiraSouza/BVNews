@@ -9,4 +9,6 @@ import Foundation
 
 class SearchNewsViewModel {
     
+    weak var coordinator: SearchNewsCoordinator?
+    
 }

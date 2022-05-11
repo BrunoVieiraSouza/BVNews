@@ -9,6 +9,8 @@ import UIKit
 
 class HomeNewsViewController: UIViewController {
 
+    var viewModel: HomeNewsViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

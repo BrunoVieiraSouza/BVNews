@@ -9,4 +9,6 @@ import Foundation
 
 class HomeNewsViewModel {
     
+    weak var coordinator: HomeNewsCoordinator?
+    
 }

@@ -13,6 +13,8 @@ final class CreateAccountCoordinator: Coordinator {
     var childCoordinator: [Coordinator] = []
     var parentCoordinator: Coordinator?
     
+    
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -24,7 +26,7 @@ final class CreateAccountCoordinator: Coordinator {
         navigationController.pushViewController(createAccountVC, animated: true)
     }
     
-    func back(){
+    func back() {
         navigationController.popViewController(animated: true)
     }
     
