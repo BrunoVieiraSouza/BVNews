@@ -25,9 +25,10 @@ class CreateAccountViewController: UIViewController {
     
     @IBAction func createAccountBT(_ sender: UIButton) {
         
-        viewModel?.createUser(nome: self.fullName.text ?? "", email: self.email.text ?? "", senha: self.password.text ?? "")
+        guard let email = email.text, let fullName = fullName.text, let password = password.text, let confirmarSenha = passwordConfirmation.text else {return}
+        
+        viewModel?.createUser(nome: fullName, email: email, senha: password, confirmarSenha: confirmarSenha)
     }
-    
     
     deinit {
     }
