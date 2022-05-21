@@ -13,23 +13,19 @@ final class CreateAccountCoordinator: Coordinator {
     var childCoordinator: [Coordinator] = []
     var parentCoordinator: Coordinator?
     
-    
-    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     func start() {
         guard let createAccountVC = UIStoryboard.createAccount.instantiateViewController(withIdentifier: "CreateAccountViewController") as? CreateAccountViewController else {return}
-        createAccountVC.viewModel = CreateAccountViewModel()
-        createAccountVC.viewModel?.coordinator = self
+        createAccountVC.viewModel = CreateAccountViewModel(coordinator: self)
         navigationController.pushViewController(createAccountVC, animated: true)
     }
     
     func back() {
         navigationController.popViewController(animated: true)
     }
-    
     
     deinit {
         

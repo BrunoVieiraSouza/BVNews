@@ -13,19 +13,16 @@ class CreateAccountViewModel {
     
     weak var coordinator: CreateAccountCoordinator?
    
-    
-    init() {
-        
+    init(coordinator: CreateAccountCoordinator) {
+        self.coordinator = coordinator
     }
     
     func createUser(nome: String, email: String, senha: String) {
-        
         let user = UserNew(nameFull: nome, email: email, password: senha, passwordConfirmation: senha)
-        
         autenticationUser(user: user)
     }
     
-    func autenticationUser(user: UserNew) {
+    private func autenticationUser(user: UserNew) {
         
         let autenticacao = Auth.auth()
         let usernovo = user
@@ -46,8 +43,6 @@ class CreateAccountViewModel {
                 print("erro ooooooooooo")
             }
         }
-        
-        
     }
     
     deinit {

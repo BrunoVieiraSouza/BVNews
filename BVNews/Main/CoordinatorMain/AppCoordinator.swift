@@ -23,6 +23,5 @@ final class AppCoordinator: Coordinator {
         add(childCoordinator: childCoordinator)
         childCoordinator.parentCoordinator = self
         childCoordinator.start()
-        print("AppCoordinator instanciou o LoginCoordinator, passando uma Navigation e dando o Start")
     }
 }

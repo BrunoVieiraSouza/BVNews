@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias LoginProtocol = Coordinator & ShowCreateAccountProtocol
+typealias LoginProtocol = Coordinator & ShowCreateAccountProtocol & ShowAreaLogadaProtocol
 
 class LoginViewModel {
     
@@ -21,8 +21,11 @@ class LoginViewModel {
         coordinator?.showCreateAccountView()
     }
     
+    func showAreaLogada() {
+        coordinator?.showAreaLogada()
+    }
+    
     deinit {
        
     }
-    
 }

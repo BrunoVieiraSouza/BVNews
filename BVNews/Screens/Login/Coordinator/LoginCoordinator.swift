@@ -10,7 +10,10 @@ import UIKit
 
 protocol ShowCreateAccountProtocol: AnyObject {
     func showCreateAccountView()
-    func logarApp()
+}
+
+protocol ShowAreaLogadaProtocol: AnyObject {
+    func showAreaLogada()
 }
 
 final class LoginCoordinator: Coordinator {
@@ -33,16 +36,18 @@ final class LoginCoordinator: Coordinator {
     }
 }
 
-extension LoginCoordinator: ShowCreateAccountProtocol {
+extension LoginCoordinator: ShowCreateAccountProtocol, ShowAreaLogadaProtocol {
+    func showAreaLogada() {
+        let childCoordinator = HomeNewsCoordinator(navigationController: navigationController)
+        add(childCoordinator: childCoordinator)
+        childCoordinator.parentCoordinator = self
+        childCoordinator.start()
+    }
+    
     func showCreateAccountView() {
         let childCoordinator = CreateAccountCoordinator(navigationController: navigationController)
         add(childCoordinator: childCoordinator)
         childCoordinator.parentCoordinator = self
         childCoordinator.start()
     }
-    
-    func logarApp() {
-        
-    }
-    
 }

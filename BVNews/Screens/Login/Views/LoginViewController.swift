@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol loginDelegate {
+    func users()
+}
+
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var emailUser: UITextField!
@@ -19,8 +23,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButton(_ sender: UIButton) {
-        
-        navigationController?.pushViewController(TabBarControllerNews(), animated: true)
+        viewModel?.showAreaLogada()
     }
     
     @IBAction func salvarSenhaSwitch(_ sender: UISwitch) {
